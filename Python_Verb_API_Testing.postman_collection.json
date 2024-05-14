@@ -1,0 +1,931 @@
+{
+	"info": {
+		"_postman_id": "a2e7eeea-883a-48db-809b-c469b5e68dbb",
+		"name": "Python Final Project Testing",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33466249"
+	},
+	"item": [
+		{
+			"name": "create users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"linux\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"linux@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "create users",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"linux\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"linux@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Mar 2024 02:31:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"65ff906e25179d2ad387a397\"\n}"
+				},
+				{
+					"name": "create users",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"linux\",\n    \"email\":\"linux.@gmail.com\",\n    \"password\":\"linux@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:12:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6609a78c863d128465596180\"\n}"
+				}
+			]
+		},
+		{
+			"name": "log in users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"linux\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"linux@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "create users",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"linux\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"linux@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Mar 2024 02:31:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"65ff906e25179d2ad387a397\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get verb using external API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verb\":\"habiter\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "log in users Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/verbs/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:18:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5794"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conditionnel\": {\n        \"passe1reForme\": {\n            \"conditionnelPasse1reFormeHeSheIt\": \"il/elle/on aurait habité\",\n            \"conditionnelPasse1reFormeI\": \"j'aurais habité\",\n            \"conditionnelPasse1reFormeThey\": \"ils/elles auraient habité\",\n            \"conditionnelPasse1reFormeWe\": \"nous aurions habité\",\n            \"conditionnelPasse1reFormeYou\": \"tu aurais habité\",\n            \"conditionnelPasse1reFormeYouAll\": \"vous auriez habité\"\n        },\n        \"passe2eForme\": {\n            \"conditionnelPasse2eFormeHeSheIt\": \"il/elle/on eût habité\",\n            \"conditionnelPasse2eFormeI\": \"j'eusse habité\",\n            \"conditionnelPasse2eFormeThey\": \"ils/elles eussent habité\",\n            \"conditionnelPasse2eFormeWe\": \"nous eussions habité\",\n            \"conditionnelPasse2eFormeYou\": \"tu eusses habité\",\n            \"conditionnelPasse2eFormeYouAll\": \"vous eussiez habité\"\n        },\n        \"present\": {\n            \"conditionnelPresentHeSheIt\": \"il/elle/on habiterait\",\n            \"conditionnelPresentI\": \"j'habiterais\",\n            \"conditionnelPresentThey\": \"ils/elles habiteraient\",\n            \"conditionnelPresentWe\": \"nous habiterions\",\n            \"conditionnelPresentYou\": \"tu habiterais\",\n            \"conditionnelPresentYouAll\": \"vous habiteriez\"\n        }\n    },\n    \"fullDescription\": \"VERBE DU 1er GROUPE | SE CONJUGUE AVEC L'AUXILIAIRE AVOIR | MODÈLE AIMER | VERBE POUVANT êTRE TRANSITIF OU INTRANSITIF | Aucune règle spécifique pour la conjugaison du verbe\",\n    \"imperatif\": {\n        \"passe\": {\n            \"imperatifPasseFirst\": \"aie habité\",\n            \"imperatifPasseSecond\": \"ayons habité\",\n            \"imperatifPasseThird\": \"ayez habité\"\n        },\n        \"present\": {\n            \"imperatifPresentFirst\": \"habite\",\n            \"imperatifPresentSecond\": \"habitons\",\n            \"imperatifPresentThird\": \"habitez\"\n        }\n    },\n    \"indicatif\": {\n        \"futurAnterieur\": {\n            \"indicatifFuturAnterieurHeSheIt\": \"il/elle/on aura habité\",\n            \"indicatifFuturAnterieurI\": \"j'aurai habité\",\n            \"indicatifFuturAnterieurThey\": \"ils/elles auront habité\",\n            \"indicatifFuturAnterieurWe\": \"nous aurons habité\",\n            \"indicatifFuturAnterieurYou\": \"tu auras habité\",\n            \"indicatifFuturAnterieurYouAll\": \"vous aurez habité\"\n        },\n        \"futurSimple\": {\n            \"indicatifFuturSimpleHeSheIt\": \"il/elle/on habitera\",\n            \"indicatifFuturSimpleI\": \"j'habiterai\",\n            \"indicatifFuturSimpleThey\": \"ils/elles habiteront\",\n            \"indicatifFuturSimpleWe\": \"nous habiterons\",\n            \"indicatifFuturSimpleYou\": \"tu habiteras\",\n            \"indicatifFuturSimpleYouAll\": \"vous habiterez\"\n        },\n        \"imparfait\": {\n            \"indicatifImparfaitHeSheIt\": \"il/elle/on habitait\",\n            \"indicatifImparfaitI\": \"j'habitais\",\n            \"indicatifImparfaitThey\": \"ils/elles habitaient\",\n            \"indicatifImparfaitWe\": \"nous habitions\",\n            \"indicatifImparfaitYou\": \"tu habitais\",\n            \"indicatifImparfaitYouAll\": \"vous habitiez\"\n        },\n        \"passeAnterieur\": {\n            \"indicatifPasseAnterieurHeSheIt\": \"il/elle/on eut habité\",\n            \"indicatifPasseAnterieurI\": \"j'eus habité\",\n            \"indicatifPasseAnterieurThey\": \"ils/elles eurent habité\",\n            \"indicatifPasseAnterieurWe\": \"nous eûmes habité\",\n            \"indicatifPasseAnterieurYou\": \"tu eus habité\",\n            \"indicatifPasseAnterieurYouAll\": \"vous eûtes habité\"\n        },\n        \"passeCompose\": {\n            \"indicatifPasseComposeHeSheIt\": \"il/elle/on a habité\",\n            \"indicatifPasseComposeI\": \"j'ai habité\",\n            \"indicatifPasseComposeThey\": \"ils/elles ont habité\",\n            \"indicatifPasseComposeWe\": \"nous avons habité\",\n            \"indicatifPasseComposeYou\": \"tu as habité\",\n            \"indicatifPasseComposeYouAll\": \"vous avez habité\"\n        },\n        \"passeSimple\": {\n            \"indicatifPasseSimpleHeSheIt\": \"il/elle/on habita\",\n            \"indicatifPasseSimpleI\": \"j'habitai\",\n            \"indicatifPasseSimpleThey\": \"ils/elles habitèrent\",\n            \"indicatifPasseSimpleWe\": \"nous habitâmes\",\n            \"indicatifPasseSimpleYou\": \"tu habitas\",\n            \"indicatifPasseSimpleYouAll\": \"vous habitâtes\"\n        },\n        \"plusQueParfait\": {\n            \"indicatifPlusQueParfaitHeSheIt\": \"il/elle/on avait habité\",\n            \"indicatifPlusQueParfaitI\": \"j'avais habité\",\n            \"indicatifPlusQueParfaitThey\": \"ils/elles avaient habité\",\n            \"indicatifPlusQueParfaitWe\": \"nous avions habité\",\n            \"indicatifPlusQueParfaitYou\": \"tu avais habité\",\n            \"indicatifPlusQueParfaitYouAll\": \"vous aviez habité\"\n        },\n        \"present\": {\n            \"indicatifPresentHeSheIt\": \"il/elle/on habite\",\n            \"indicatifPresentI\": \"j'habite\",\n            \"indicatifPresentThey\": \"ils/elles habitent\",\n            \"indicatifPresentWe\": \"nous habitons\",\n            \"indicatifPresentYou\": \"tu habites\",\n            \"indicatifPresentYouAll\": \"vous habitez\"\n        }\n    },\n    \"infinitive\": {\n        \"passe\": \"avoir habité\",\n        \"present\": \"habiter\"\n    },\n    \"participe\": {\n        \"passe\": \"habité\",\n        \"present\": \"habitant\"\n    },\n    \"subjonctif\": {\n        \"imparfait\": {\n            \"subjonctifImparfaitHeSheIt\": \"qu'il/elle/on habitât\",\n            \"subjonctifImparfaitI\": \"que j'habitasse\",\n            \"subjonctifImparfaitThey\": \"qu'ils/elles habitassent\",\n            \"subjonctifImparfaitWe\": \"que nous habitassions\",\n            \"subjonctifImparfaitYou\": \"que tu habitasses\",\n            \"subjonctifImparfaitYouAll\": \"que vous habitassiez\"\n        },\n        \"passe\": {\n            \"subjonctifPasseHeSheIt\": \"qu'il/elle/on ait habité\",\n            \"subjonctifPasseI\": \"que j'aie habité\",\n            \"subjonctifPasseThey\": \"qu'ils/elles aient habité\",\n            \"subjonctifPasseWe\": \"que nous ayons habité\",\n            \"subjonctifPasseYou\": \"que tu aies habité\",\n            \"subjonctifPasseYouAll\": \"que vous ayez habité\"\n        },\n        \"plusQueParfait\": {\n            \"subjonctifPlusQueParfaitHeSheIt\": \"qu'il/elle/on eût habité\",\n            \"subjonctifPlusQueParfaitI\": \"que j'eusse habité\",\n            \"subjonctifPlusQueParfaitThey\": \"qu'ils/elles eussent habité\",\n            \"subjonctifPlusQueParfaitWe\": \"que nous eussions habité\",\n            \"subjonctifPlusQueParfaitYou\": \"que tu eusses habité\",\n            \"subjonctifPlusQueParfaitYouAll\": \"que vous eussiez habité\"\n        },\n        \"present\": {\n            \"subjonctifPresentHeSheIt\": \"qu'il/elle/on habite\",\n            \"subjonctifPresentI\": \"que j'habite\",\n            \"subjonctifPresentThey\": \"qu'ils/elles habitent\",\n            \"subjonctifPresentWe\": \"que nous habitions\",\n            \"subjonctifPresentYou\": \"que tu habites\",\n            \"subjonctifPresentYouAll\": \"que vous habitiez\"\n        }\n    },\n    \"verb\": \"habiter\",\n    \"word\": \"habiter\",\n    \"wordConjugateRule\": \"Aucune règle spécifique pour la conjugaison du verbe\",\n    \"wordConjugateWhichVerbModel\": \"MODÈLE AIMER\",\n    \"wordConjugateWithWhichVerb\": \"SE CONJUGUE AVEC L'AUXILIAIRE AVOIR\",\n    \"wordVerbGroup\": \"VERBE DU 1er GROUPE\",\n    \"wordVerbType\": \"VERBE POUVANT êTRE TRANSITIF OU INTRANSITIF\"\n}"
+				}
+			]
+		},
+		{
+			"name": "gets random verbs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quantity\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs /random/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs ",
+						"random",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "get verbs techer Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/verbs /random/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs ",
+								"random",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:23:04 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"verbs\": [\n        \"alle\",\n        \"rappeler\",\n        \"perdre\",\n        \"tirer\",\n        \"préparer\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "create vrbs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verb\":\"is\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs/favorites/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs",
+						"favorites",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "create vrbs",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NWZmOTA2ZTI1MTc5ZDJhZDM4N2EzOTciLCJleHAiOjE3MTQ0OTgwOTJ9.m8C3sow35GNMyvPzM9D3drlFmngZufv6rcmyKiolHKA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"verb\": \"was\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/verbs/favorites/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs",
+								"favorites",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:25:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"6609aa87863d128465596181\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/verbs /favorites/<favoriteUid>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verb\":\"is\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs/favorites/6609aa87863d128465596181/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs",
+						"favorites",
+						"6609aa87863d128465596181",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "create vrbs Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/verbs/favorites/6609aa87863d128465596181/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs",
+								"favorites",
+								"6609aa87863d128465596181",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:31:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"verbs\": [\n        {\n            \"id\": \"6609aa87863d128465596181\",\n            \"owner\": \"65ff906e25179d2ad387a397\",\n            \"verb\": \"was\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/verbs /favorites/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verb\":\"is\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs/favorites/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs",
+						"favorites",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "/verbs /favorites/<favoriteUid> Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/verbs/favorites/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs",
+								"favorites",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:34:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "346"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"verbs\": [\n        {\n            \"id\": \"6609aa87863d128465596181\",\n            \"owner\": \"65ff906e25179d2ad387a397\",\n            \"verb\": \"was\"\n        },\n        {\n            \"id\": \"6609aaa6863d128465596182\",\n            \"owner\": \"65ff906e25179d2ad387a397\",\n            \"verb\": \"were\"\n        },\n        {\n            \"id\": \"6609aaae863d128465596183\",\n            \"owner\": \"65ff906e25179d2ad387a397\",\n            \"verb\": \"should\"\n        },\n        {\n            \"id\": \"6609aab7863d128465596184\",\n            \"owner\": \"65ff906e25179d2ad387a397\",\n            \"verb\": \"shall\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /verbs /favorites/<favoriteUid>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWQiOiI2NjA3ODM3NDhkOTIyYTRiY2YxZDk4NTgiLCJleHAiOjE3MTQzNjA0NDN9.XmZRjoUpzynHI0Qgnnb04C-rvn1cZD_Y3Bg4iS3uTGQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"verb\":\"am\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/verbs/favorites/66078a0fdb90f1053506649d/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"verbs",
+						"favorites",
+						"66078a0fdb90f1053506649d",
+						""
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "get verbs",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"verb\":\"am\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/verbs/favorites/6609aaa6863d128465596182",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verbs",
+								"favorites",
+								"6609aaa6863d128465596182"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.1 Python/3.10.13"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 31 Mar 2024 18:38:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"verbs\": {\n        \"verbs_affected\": 1\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
